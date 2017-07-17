@@ -1,0 +1,150 @@
+body {
+  background: url("../../assets/images/background.jpg");
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+body h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  color: #A18064;
+  text-align: center;
+  line-height: 0.8em;
+}
+
+h1, h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#header {
+  padding: 30px 5% 15px 5%;
+  margin: 0;
+}
+
+#header img {
+  max-width: 400px;
+}
+
+#row1 {
+  padding: 0;
+  margin: 0;
+}
+
+#alert {
+  color: #EAE5D4;
+}
+
+#row2 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 0;
+  color: #A18064;
+}
+
+.cards {
+  padding-bottom: 20px;
+}
+
+.portraits {
+  border: 3px solid #A18064;
+  border-radius: 10px;
+}
+
+.portraits:hover {
+  opacity: 0.8;
+}
+
+.name {
+  text-align: center;
+}
+
+.hp {
+  color: #EAE5D4;
+}
+
+#row3 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 0;
+  margin: 0;
+}
+
+#player-portrait {
+  border-color: #555;
+}
+
+#player-portrait:hover {
+  opacity: 1;
+}
+
+#player {
+  color: #555;
+}
+
+#playerHP {
+  color: #555;
+}
+
+#vs {
+  font-size: 96px;
+  font-weight: bold;
+  color: #555;
+  margin-top: 45%;
+}
+
+#computer-portrait {
+  border-color: #555;
+}
+
+#computer-portrait:hover {
+  opacity: 1;
+}
+
+#computer {
+  color: #555;
+}
+
+#computerHP {
+  color: #555;
+}
+
+#row4 {
+  margin-bottom: 100px;
+}
+
+#button {
+  color: #555;
+  background-color: #black;
+  border: 3px solid #555;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#button:hover {
+  opacity: 0.8;
+}
+
+/*Sticky Footer*/
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin: 0 0 60px 0;
+  padding: 0;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  padding-top: 15px;
+  border-top: solid 3px #A18064;
+  color: #A18064;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity = "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin = "anonymous">
+    <link rel = "stylesheet" href = "assets/css/style.css">
+    <link href = "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Oswald:300,400,500,600,700" rel = "stylesheet">
+    <script src = "https://use.fontawesome.com/176781d8dc.js"></script>
+    <title>Rogue One: A Star Wars RPG Game</title>
+  </head>
+  <body>
+    <div id = "header">
+      <div class = "row">
+        <div class = "col-md-12">
+          <img id = "banner" class = "center-block" src = "assets/images/logo.png" alt = "Rogue One Game" width = "100%">
+        </div>
+      </div>
+    </div>
+    <div class = "row" id = "row1">
+      <div class = "col-md-12">
+        <h2 id = "alert">Select Your Rebel</h2>
+      </div>
+    </div>
+    <div class = "row" id = "row2">
+      <div class = "col-md-3"></div>
+      <div class = "col-md-1 col-xs-4">
+        <img class = "portraits" src = "assets/images/jyn.png" alt = "Jyn Erso" width = "100%"></li>
+        <h4 class = "name">JYN</h4>
+        <h6 id = "jynHP" class = "hp"><i class="fa fa-heartbeat hp-icon" aria-hidden="true"></i> 120</h6>
+      </div>
+      <div id = "cassian" class = "cards col-md-1 col-xs-4">
+        <img class = "portraits" src = "assets/images/cassian.png" alt = "Cassian Andor" width = "100%">
+        <h4 class = "name">CASSIAN</h4>
+        <h6 id = "cassianHP" class = "hp"><i class = "fa fa-heartbeat hp-icon" aria-hidden = "true"></i> 100</h6>
+      </div>
+      <div id = "k2" class = "cards col-md-1 col-xs-4">
+        <img class = "portraits" src = "assets/images/k2so.png" alt = "K-2SO" width = "100%">
+        <h4 class = "name">K-2</h4>
+        <h6 id = "k2HP" class = "hp"><i class="fa fa-heartbeat hp-icon" aria-hidden="true"></i> 200</h6>
+      </div>
+      <div id = "chirrut" class = "cards col-md-1 col-xs-4">
+        <img class = "portraits" src = "assets/images/chirrut.png" alt = "Chirrun Imwe" width = "100%">
+        <h4 class = "name">CHIRRUT</h4>
+        <h6 id = "chirrutHP" class = "hp"><i class="fa fa-heartbeat hp-icon" aria-hidden ="true"></i> 140</h6>
+      </div>
+      <div id = "baze" class = "cards col-md-1 col-xs-4">
+        <img class = "portraits" src = "assets/images/baze.png" alt = "Baze Malbus" width = "100%">
+        <h4 class = "name">BAZE</h4>
+        <h6 id = "bazeHP" class = "hp"><i class="fa fa-heartbeat hp-icon" aria-hidden="true"></i> 180</h6>
+      </div>
+      <div id = "bodhi" class = "cards col-md-1 col-xs-4">
+        <img class = "portraits" src = "assets/images/bodhi.png" alt = "Bodhi Rook" width = "100%">
+        <h4 class = "name">BODHI</h4>
+        <h6 id = "bodhiHP" class = "hp"><i class="fa fa-heartbeat hp-icon" aria-hidden="true"></i> 80</h6>
+      </div>
+      <div class = "col-md-3"></div>
+    </div>
+    <div class = "row" id = "row3">
+      <div class = "col-md-3"></div>
+      <div class = "col-md-2 col-xs-4">
+        <img id = "player-portrait" class = "portraits" src = "assets/images/placeholder-left.png" alt = "Player" width = "100%">
+        <h3 id = "player" class = "name">PLAYER</h3>
+        <h5 id = "playerHP" class = "hp"><i class="fa fa-heartbeat hp-icon" aria-hidden="true"></i> ---</h5>
+      </div>
+      <div class = "col-md-2 col-xs-4">
+        <h1 id = "vs">VS</h1>
+      </div>
+      <div class = "col-md-2 col-xs-4">
+        <img id = "computer-portrait" class = "portraits" src = "assets/images/placeholder-right.png" alt = "Computer" width = "100%">
+        <h3 id = "computer" class = "name">COMPUTER</h3>
+        <h5 id = "playerHP" class = "hp"><i class="fa fa-heartbeat hp-icon" aria-hidden="true"></i> ---</h5>
+      </div>
+      <div class = "col-md-3"></div>
+    </div>
+    <div class = "row" id = "row4">
+      <div class="col-md-5 col-xs-4"></div>
+      <div class = "col-md-2 col-xs-4">
+        <h2 id = "button">ATTACK</h2>
+      </div>
+      <div class="col-md-5 col-xs-4"></div>
+    </div>
+    <div class = "footer">
+      <div class = "col-12-md text-center">
+        &copy; 2017 Alan Kemsley
+      </div>
+    </div>
+  <script type = "text/javascript" src="assets/javascript/game.js"></script>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </body>
+</html>
