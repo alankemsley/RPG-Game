@@ -145,15 +145,7 @@ $(document).ready(function(){
             $("#alert").text("You have Defeated Your Opponent.");
             $(this).on({"click": function(){$("#alert").text("Select Your Next Opponent.")}});
             $(this).css("opacity", "0.2");
-            opponent = $(this).children("h4").text();
-            $("#alert").text("Click ATTACK to Duel");
-            $(this).clone().replaceAll("#computer-div").removeClass("col-md-1 col-sm-2 col-xs-4 rebelsList cards").addClass("col-sm-2 col-xs-4");
-            $(this).css("opacity", "0.5");
-            $(this).children().css("color", "#555");
-            $(this).children().css("border-color", "#555");
-            $(this).children("h6").text("");
-            $("#attack").css("color", "#A18064").css("border-color", "#A18064");
-            console.log("Opponent: " + opponent);
+            opponent = null; //For some reason, this isn't reseting my opponent list and allowing me to select a new opponent.
 
               //IF NOBODY HAS WON YET
           }   else {
