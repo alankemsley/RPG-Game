@@ -54,7 +54,7 @@ h1, h2 {
   border-radius: 10px;
 }
 
-.portraits:hover {
+.rebelsList:hover {
   opacity: 0.8;
 }
 
@@ -78,6 +78,10 @@ h1, h2 {
 }
 
 #player:hover {
+  opacity: 1;
+}
+
+#player-div:hover {
   opacity: 1;
 }
 
