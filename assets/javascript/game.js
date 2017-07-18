@@ -156,9 +156,10 @@ $(document).ready(function(){
                 opponent.health = opponent.health - player.power;
                 console.log("Player stats: " + player.health + " health, " + player.power + " attack power.");
                 console.log("Opponent stats: " + opponent.health + " health, " + opponent.counter + " counter-attack power.");
+                $("#alert").text("Your Health: " + player.health + " | Opponent Health: " + opponent.health);
 
                 //Replace player and opponent health point text in HTML with new health points. I can't do this because I had previously cloned the selected characters into the new DIV, rather than moving them over. This also cloned the IDs so now I can't call the IDs of the new DIV. This is what I get for going the extra mile and trying to do more than what is expected of me.
-                $("#player-hp").text(player.health);
+                $(".player-div-class").children("h6").text(player.health);
                 $("#computer-hp").text(opponent.health);
               }
     }
@@ -172,19 +173,5 @@ $(document).ready(function(){
       } else {}
     }
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 });
