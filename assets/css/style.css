@@ -73,19 +73,19 @@ h1, h2 {
   margin: 0;
 }
 
-#player-portrait {
+#player {
   border-color: #555;
 }
 
-#player-portrait:hover {
+#player:hover {
   opacity: 1;
 }
 
-#player {
+#player-name {
   color: #555;
 }
 
-#playerHP {
+#player-hp {
   color: #555;
 }
 
@@ -96,19 +96,19 @@ h1, h2 {
   margin-top: 45%;
 }
 
-#computer-portrait {
+#computer {
   border-color: #555;
 }
 
-#computer-portrait:hover {
+#computer:hover {
   opacity: 1;
 }
 
-#computer {
+#computer-name {
   color: #555;
 }
 
-#computerHP {
+#computer-hp {
   color: #555;
 }
 
@@ -116,7 +116,7 @@ h1, h2 {
   margin-bottom: 100px;
 }
 
-#button {
+.buttons {
   color: #555;
   background-color: #black;
   border: 3px solid #555;
@@ -125,7 +125,7 @@ h1, h2 {
   padding-bottom: 10px;
 }
 
-#button:hover {
+.buttons:hover {
   opacity: 0.8;
 }
 
