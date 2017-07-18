@@ -1,82 +1,148 @@
-var jyn = {
-  "name": "JYN",
-  "health": 120,
-  "attack-power": 0,
-  "counter-attack": 0
-};
-
-var cassian = {
-  "name": "CASSIAN",
-  "health": 100,
-  "attack-power": 0,
-  "counter-attack": 0
-};
-
-var k2 = {
-  "name": "K-2",
-  "health": 180,
-  "attack-power": 0,
-  "counter-attack": 0
-};
-
-var chirrut = {
-  "name": "CHIRRUT",
-  "health": 140,
-  "attack-power": 0,
-  "counter-attack": 0
-};
-
-var baze = {
-  "name": "BAZE",
-  "health": 160,
-  "attack-power": 0,
-  "counter-attack": 0
-};
-
-var bodhi = {
-  "name": "BODHI",
-  "health": 80,
-  "attack-power": 0,
-  "counter-attack": 0
-};
-
-var rebels = [jyn, cassian, k2, chirrut, baze, bodhi];
-var selectedRebel = null;
-var selectedOpponent = null;
-
-
 $(document).ready(function(){
 
-  //CHARACTER AND OPPONENT SELECTION
+  //CURRENT PLAYER AND OPPONENT CHARACTERS
+  var player = null;
+  var opponent = null;
+
+  //ARRAY OF CHARACTERS AS OBJECTS
+  var rebels = [
+    {
+      name: "JYN",
+      health: 120,
+      power: 0,
+      counter: 0
+    },
+    {
+      name: "CASSIAN",
+      health: 100,
+      power: 0,
+      counter: 0
+    },
+    {
+      name: "K2",
+      health: 180,
+      power: 0,
+      counter: 0
+    },
+    {
+      name: "CHIRRUT",
+      health: 140,
+      power: 0,
+      counter: 0
+    },
+    {
+      name: "BAZE",
+      health: 160,
+      power: 0,
+      counter: 0
+    },
+    {
+      name: "BODHI",
+      health: 80,
+      power: 0,
+      counter: 0
+    }
+  ];
+
+  //PLAYER AND OPPONENT CHARACTER SELECTION PROCESS
   $(".rebelsList").on({
     "click": function(){
-      if (selectedRebel == $(this).children("h4").text() || selectedOpponent !== null) {
-      } else if (selectedRebel === null) {
-          selectedRebel = $(this).children("h4").text();
+      //If the same character has already been selected, or if player has already selected an opponent:
+      if (player == $(this).children("h4").text() || opponent !== null) {
+        //If the player character hasn't been selected yet:
+      } else if (player === null) {
+          player = $(this).children("h4").text();
           $("#alert").text("Select Your Opponent");
+          //For better visual aesthetics, selected characters get grayed out instead of disappearing from the grid.
           $(this).clone().replaceAll("#player-div").removeClass("col-md-1 col-sm-2 col-xs-4 rebelsList cards").addClass("col-sm-2 col-xs-4");
           $(this).css("opacity", "0.5");
           $(this).children().css("color", "#555");
           $(this).children().css("border-color", "#555");
+          $(this).children("h6").text("");
           $("#vs").css("color", "#EAE5D4");
           $("#restart").css("color", "#EAE5D4").css("border-color", "#EAE5D4");
+          console.log("Player: " + player);
+
+          //If the player character has already been selected:
         } else {
-            selectedOpponent = $(this).children("h4").text();
-            $("#alert").text("Click ATTACK to Begin Duel");
+            opponent = $(this).children("h4").text();
+            $("#alert").text("Click ATTACK to Duel");
             $(this).clone().replaceAll("#computer-div").removeClass("col-md-1 col-sm-2 col-xs-4 rebelsList cards").addClass("col-sm-2 col-xs-4");
             $(this).css("opacity", "0.5");
             $(this).children().css("color", "#555");
             $(this).children().css("border-color", "#555");
+            $(this).children("h6").text("");
             $("#attack").css("color", "#A18064").css("border-color", "#A18064");
+            console.log("Opponent: " + opponent);
           }
+
+      //ASSIGN SELECTED PLAYER CHARACTERS TO CORRESPONDING OBJECTS
+      switch (player) {
+        case "JYN":
+          player = rebels[0];
+          break;
+        case "CASSIAN":
+          player = rebels[1];
+          break;
+        case "K2":
+          player = rebels[2];
+          break;
+        case "CHIRRUT":
+          player = rebels[3];
+          break;
+        case "BAZE":
+          player = rebels[4];
+          break;
+        case "BODHI":
+          player = rebels[5];
+          break;
+      }
+
+      //FOR TESTING
+      console.log("Player stats: " + player.health + " health, " + player.power + " attack power.");
+
+      //ASSIGN SELECTED OPPONENT CHARACTERS TO CORRESPONDING OBJECTS
+      switch (opponent) {
+        case "JYN":
+          opponent = rebels[0];
+          break;
+        case "CASSIAN":
+          opponent = rebels[1];
+          break;
+        case "K2":
+          opponent = rebels[2];
+          break;
+        case "CHIRRUT":
+          opponent = rebels[3];
+          break;
+        case "BAZE":
+          opponent = rebels[4];
+          break;
+        case "BODHI":
+          opponent = rebels[5];
+          break;
+      }
+
+      //FOR TESTING
+      console.log("Opponent stats: " + opponent.health + " health, " + opponent.counter + " counter-attack power.");
     }
   });
 
+  //ATTACK PROCESS
+  $("#attack").on({
+    "click": function (){
+      console.log("Attacked");
+    }
+  });
 
-
-
-
-
+  //RESTART GAME
+  $("#restart").on({
+    "click": function (){
+      if (player !== null) {
+        location.reload();
+      } else {}
+    }
+  });
 
 
 
