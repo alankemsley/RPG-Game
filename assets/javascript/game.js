@@ -141,16 +141,34 @@ $(document).ready(function(){
         $(this).css("opacity", "0.2");
           //IF PLAYER WINS
       }   else if (opponent.health <= 0){
-            console.log("You have defeated your opponent!")
-            $("#alert").text("YOU WIN");
-            $("#row2").css("opacity", "0.2");
-            $("#row3").css("opacity", "0.2");
-            $(this).on({"click": function(){$("#alert").text("Click RESTART to restart the game.")}});
+            console.log("You have defeated your opponent!");
+            $("#alert").text("You have Defeated Your Opponent.");
+            $(this).on({"click": function(){$("#alert").text("Select Your Next Opponent.")}});
             $(this).css("opacity", "0.2");
+            opponent = $(this).children("h4").text();
+            $("#alert").text("Click ATTACK to Duel");
+            $(this).clone().replaceAll("#computer-div").removeClass("col-md-1 col-sm-2 col-xs-4 rebelsList cards").addClass("col-sm-2 col-xs-4");
+            $(this).css("opacity", "0.5");
+            $(this).children().css("color", "#555");
+            $(this).children().css("border-color", "#555");
+            $(this).children("h6").text("");
+            $("#attack").css("color", "#A18064").css("border-color", "#A18064");
+            console.log("Opponent: " + opponent);
+
               //IF NOBODY HAS WON YET
           }   else {
-            //ATTACK PROCESS HERE. USE MATH FUNCTIONS TO DECREASE HEALTH ACCORDING TO PLAYER ATTACK POWER AND OPPONENT COUNTER-ATTACK POWER EACH TIME ATTACK BUTTON IS PRESSED.
-          }
+            //BORING MATH STUFF HERE.
+            //Use Math to decrease the health of both characters according to the attack power and counter-attack power, while increasing the attack power of the player.
+                player.health = player.health - opponent.counter;
+                player.power = player.power * 2;
+                opponent.health = opponent.health - player.power;
+                console.log("Player stats: " + player.health + " health, " + player.power + " attack power.");
+                console.log("Opponent stats: " + opponent.health + " health, " + opponent.counter + " counter-attack power.");
+
+                //Replace player and opponent health point text in HTML with new health points. I can't do this because I had previously cloned the selected characters into the new DIV, rather than moving them over. This also cloned the IDs so now I can't call the IDs of the new DIV. This is what I get for going the extra mile and trying to do more than what is expected of me.
+                $("#player-hp").text(player.health);
+                $("#computer-hp").text(opponent.health);
+              }
     }
   });
 
