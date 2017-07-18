@@ -8,39 +8,39 @@ $(document).ready(function(){
   var rebels = [
     {
       name: "JYN",
-      health: 120,
-      power: 0,
-      counter: 0
+      health: 100,
+      power: 20,
+      counter: 25
     },
     {
       name: "CASSIAN",
-      health: 100,
-      power: 0,
-      counter: 0
+      health: 110,
+      power: 15,
+      counter: 20
     },
     {
       name: "K2",
-      health: 180,
-      power: 0,
-      counter: 0
+      health: 130,
+      power: 10,
+      counter: 15
     },
     {
       name: "CHIRRUT",
-      health: 140,
-      power: 0,
-      counter: 0
+      health: 90,
+      power: 25,
+      counter: 30
     },
     {
       name: "BAZE",
-      health: 160,
-      power: 0,
-      counter: 0
+      health: 120,
+      power: 30,
+      counter: 35
     },
     {
       name: "BODHI",
       health: 80,
-      power: 0,
-      counter: 0
+      power: 5,
+      counter: 10
     }
   ];
 
@@ -131,7 +131,26 @@ $(document).ready(function(){
   //ATTACK PROCESS
   $("#attack").on({
     "click": function (){
-      console.log("Attacked");
+      //IF PLAYER LOSES
+      if (player.health <= 0) {
+        console.log("You have been defeated!");
+        $("#alert").text("GAME OVER");
+        $("#row2").css("opacity", "0.2");
+        $("#row3").css("opacity", "0.2");
+        $(this).on({"click": function(){$("#alert").text("Click RESTART to restart the game.")}});
+        $(this).css("opacity", "0.2");
+          //IF PLAYER WINS
+      }   else if (opponent.health <= 0){
+            console.log("You have defeated your opponent!")
+            $("#alert").text("YOU WIN");
+            $("#row2").css("opacity", "0.2");
+            $("#row3").css("opacity", "0.2");
+            $(this).on({"click": function(){$("#alert").text("Click RESTART to restart the game.")}});
+            $(this).css("opacity", "0.2");
+              //IF NOBODY HAS WON YET
+          }   else {
+            //ATTACK PROCESS HERE. USE MATH FUNCTIONS TO DECREASE HEALTH ACCORDING TO PLAYER ATTACK POWER AND OPPONENT COUNTER-ATTACK POWER EACH TIME ATTACK BUTTON IS PRESSED.
+          }
     }
   });
 
