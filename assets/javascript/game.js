@@ -52,6 +52,7 @@ $(document).ready(function(){
         //If the player character hasn't been selected yet:
       } else if (player === null) {
           player = $(this).children("h4").text();
+          console.log("Player: " + player);
           $("#alert").text("Select Your Opponent");
           //For better visual aesthetics, selected characters get grayed out instead of disappearing from the grid.
           $(this).clone().replaceAll("#player-div").removeClass("col-md-1 rebelsList cards").addClass("player-div");
@@ -64,6 +65,7 @@ $(document).ready(function(){
           //If the player character has already been selected:
         } else {
             opponent = $(this).children("h4").text();
+            console.log("Opponent: " + opponent);
             $("#alert").text("Click ATTACK to Duel");
             $(this).clone().replaceAll("#computer-div").removeClass("col-md-1 rebelsList cards").addClass("computer-div");
             $(this).css("opacity", "0.5");
@@ -134,25 +136,19 @@ $(document).ready(function(){
             $("#alert").text("You have Defeated Your Opponent.");
             $(this).on({"click": function(){$("#alert").text("Select Your Next Opponent.")}});
             $(this).css("opacity", "0.2");
-            opponent = null; //For some reason, this isn't reseting my opponent list and allowing me to select a new opponent.
-
+            opponent = null;
+            console.log ("Player: " + player);
+            console.log("Opponent: " + opponent)
               //IF NOBODY HAS WON YET
           }   else {
-            //BORING MATH STUFF HERE.
-            //Use Math to decrease the health of both characters according to the attack power and counter-attack power, while increasing the attack power of the player.
                 player.health = player.health - opponent.counter;
-                player.power = player.power * 2;
+                player.power = player.power + player.power;
                 opponent.health = opponent.health - player.power;
-                $("#alert").text("Your Health: " + player.health + " | Opponent Health: " + opponent.health);
-
-                //Replace player and opponent health point text in HTML with new health points. I can't do this because I had previously cloned the selected characters into the new DIV, rather than moving them over. This also cloned the IDs so now I can't call the IDs of the new DIV. This is what I get for going the extra mile and trying to do more than what is expected of me.
-                $(".player-div-class").children("h6").text(player.health);
-                $("#computer-hp").text(opponent.health);
+                $(".player-div").children("h6").html("<i class = 'fa fa-heartbeat hp-icon' aria-hidden='true'></i>" + " " + player.health)
+                $(".computer-div").children("h6").html("<i class = 'fa fa-heartbeat hp-icon' aria-hidden='true'></i>" + " " + opponent.health)
               }
     }
   });
-
-
 
 
 
