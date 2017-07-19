@@ -67,9 +67,7 @@ h1, h2 {
 }
 
 #row3 {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right: 0;
+  padding: 0;
   margin: 0;
 }
 
@@ -93,11 +91,17 @@ h1, h2 {
   color: #555;
 }
 
+#vs-div {
+  padding: 0;
+  margin: 0;
+}
+
 #vs {
-  font-size: 96px;
   font-weight: bold;
   color: #555;
-  margin-top: 45%;
+  padding: 0;
+  margin: 0;
+  padding-top: 33%;
 }
 
 #computer {
@@ -120,17 +124,29 @@ h1, h2 {
   margin-bottom: 100px;
 }
 
+
+.buttons-div{
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
 .buttons {
   color: #555;
-  background-color: #black;
+  background-color: black;
   border: 3px solid #555;
   border-radius: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
+  width: 100%;
 }
 
 .buttons:hover {
   opacity: 0.8;
+}
+
+.button-text {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /*Sticky Footer*/
@@ -151,4 +167,10 @@ body {
   padding-top: 15px;
   border-top: solid 3px #A18064;
   color: #A18064;
+}
+
+@media screen and (min-width: 988px){
+  #vs {
+    font-size: 96px;
+  }
 }
