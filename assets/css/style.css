@@ -125,12 +125,14 @@ h1, h2 {
 }
 
 
-.buttons-div{
+.button-div{
   margin-top: 50px;
   margin-bottom: 25px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.buttons {
+.button {
   color: #555;
   background-color: black;
   border: 3px solid #555;
@@ -140,13 +142,13 @@ h1, h2 {
   width: 100%;
 }
 
-.buttons:hover {
+.button:hover {
   opacity: 0.8;
 }
 
 .button-text {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 /*Sticky Footer*/
@@ -169,8 +171,14 @@ body {
   color: #A18064;
 }
 
-@media screen and (min-width: 988px){
+@media screen and (min-width: 992px){
   #vs {
     font-size: 96px;
+  }
+}
+
+@media screen and (min-width: 768px){
+  #vs {
+    font-size: 72px;
   }
 }

@@ -54,24 +54,23 @@ $(document).ready(function(){
           player = $(this).children("h4").text();
           $("#alert").text("Select Your Opponent");
           //For better visual aesthetics, selected characters get grayed out instead of disappearing from the grid.
-          $(this).clone().replaceAll("#player-div").removeClass("col-md-1 col-sm-2 col-xs-4 rebelsList cards").addClass("col-sm-2 col-xs-4");
+          $(this).clone().replaceAll("#player-div").removeClass("col-md-1 rebelsList cards").addClass("player-div");
           $(this).css("opacity", "0.5");
           $(this).children().css("color", "#555");
           $(this).children().css("border-color", "#555");
-          $(this).children("h6").text("");
+          $(this).children("h6").css("color", "black");
           $("#vs").css("color", "#EAE5D4");
-          $("#restart").css("color", "#EAE5D4").css("border-color", "#EAE5D4");
 
           //If the player character has already been selected:
         } else {
             opponent = $(this).children("h4").text();
             $("#alert").text("Click ATTACK to Duel");
-            $(this).clone().replaceAll("#computer-div").removeClass("col-md-1 col-sm-2 col-xs-4 rebelsList cards").addClass("col-sm-2 col-xs-4");
+            $(this).clone().replaceAll("#computer-div").removeClass("col-md-1 rebelsList cards").addClass("computer-div");
             $(this).css("opacity", "0.5");
             $(this).children().css("color", "#555");
             $(this).children().css("border-color", "#555");
-            $(this).children("h6").text("");
-            $("#attack").css("color", "#A18064").css("border-color", "#A18064");
+            $(this).children("h6").css("color", "black");
+            $("#attack").css("color", "#EAE5D4").css("border-color", "#EAE5D4");
           }
 
       //ASSIGN SELECTED PLAYER CHARACTERS TO CORRESPONDING OBJECTS
@@ -153,13 +152,15 @@ $(document).ready(function(){
     }
   });
 
-  //RESTART GAME
-  $("#restart").on({
-    "click": function (){
-      if (player !== null) {
-        location.reload();
-      }
-    }
-  });
+
+
+
+
+
+
+
+
+
+
 
 });
