@@ -44,6 +44,9 @@ $(document).ready(function(){
     }
   ];
 
+  //GAME INSTRUCTIONS
+  alert("INSTRUCTIONS: ");
+
   //PLAYER AND OPPONENT CHARACTER SELECTION PROCESS
   $(".rebelsList").on({
     "click": function(){
