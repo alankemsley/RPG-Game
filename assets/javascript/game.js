@@ -11,19 +11,19 @@ $(document).ready(function(){
       name: "JYN",
       health: 100,
       power: 4,
-      counter: 5
+      counter: 6
     },
     {
       name: "CASSIAN",
       health: 110,
       power: 3,
-      counter: 4
+      counter: 5
     },
     {
       name: "K2",
       health: 130,
       power: 2,
-      counter: 7
+      counter: 4
     },
     {
       name: "CHIRRUT",
@@ -35,7 +35,7 @@ $(document).ready(function(){
       name: "BAZE",
       health: 120,
       power: 5,
-      counter: 6
+      counter: 7
     },
     {
       name: "BODHI",
