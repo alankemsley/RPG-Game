@@ -149,6 +149,7 @@ $(document).ready(function(){
                 player.health = Math.round(player.health - opponent.counter);
                 opponent.health = Math.round(opponent.health - player.power);
                 player.power = player.power * 1.1;
+                $("#alert").text("Your Power has Increased to " + Math.round(player.power) + " points");
                 if (player.health > 0) {
                   $(".player-div").children("h6").html("<i class = 'fa fa-heartbeat hp-icon' aria-hidden='true'></i>" + " " + player.health);
                 } else {
