@@ -9,38 +9,38 @@ $(document).ready(function(){
     {
       name: "JYN",
       health: 100,
-      power: 20,
-      counter: 25
+      power: 5,
+      counter: 30
     },
     {
       name: "CASSIAN",
       health: 110,
-      power: 15,
+      power: 4,
       counter: 20
     },
     {
       name: "K2",
       health: 130,
-      power: 10,
-      counter: 15
+      power: 3,
+      counter: 25
     },
     {
       name: "CHIRRUT",
       health: 90,
-      power: 25,
+      power: 7,
       counter: 30
     },
     {
       name: "BAZE",
       health: 120,
-      power: 30,
+      power: 6,
       counter: 35
     },
     {
       name: "BODHI",
       health: 80,
-      power: 5,
-      counter: 10
+      power: 2,
+      counter: 15
     }
   ];
 
@@ -142,8 +142,8 @@ $(document).ready(function(){
               //IF NOBODY HAS WON YET
           }   else {
                 player.health = player.health - opponent.counter;
-                player.power = player.power + player.power;
                 opponent.health = opponent.health - player.power;
+                player.power = player.power + player.power;
                 $(".player-div").children("h6").html("<i class = 'fa fa-heartbeat hp-icon' aria-hidden='true'></i>" + " " + player.health)
                 $(".computer-div").children("h6").html("<i class = 'fa fa-heartbeat hp-icon' aria-hidden='true'></i>" + " " + opponent.health)
               }
