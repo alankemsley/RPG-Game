@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+  //GAME INSTRUCTIONS
+  alert("INSTRUCTIONS: This is a 1-on-1 duelling challenge. Defeat all opponents to win. Your attack power will increase each time you attack, so it would be wise to fight the more challenging opponents after you have become stronger. May the Force be with you!");
+
   //CURRENT PLAYER AND OPPONENT CHARACTERS
   var player = null;
   var opponent = null;
@@ -128,10 +131,13 @@ $(document).ready(function(){
     "click": function (){
       if (opponent === null){
       } else if (player.health <= 0 && opponent.health > 0){
-         $("#alert").text("GAME OVER");
-         $("#row2").css("opacity", "0.2");
-         $("#row3").css("opacity", "0.2");
+         $("#alert").text("You have been Defeated");
+         $(".player-div").css("opacity", "0.5");
+         $(".player-div").children().css("color", "#555");
+         $(".player-div").children().css("border-color", "#555");
+         $(".player-div").children("h6").html("DEFEATED").css("color", "#AE3232");
          $(".button").css("opacity", "0.2");
+         $("#vs").text("GAME OVER");
        } else if (opponentsFought.length < 5 && opponent.health <= 0){
             $("#alert").text("Select Your Next Opponent");
             $(".button").css("opacity", "0.2");
@@ -141,24 +147,27 @@ $(document).ready(function(){
             $(".computer-div").children("h6").html("DEFEATED").css("color", "#AE3232");
             opponent = null;
           } else if (opponentsFought.length === 5 && opponent.health <= 0){
-              $("#alert").text("YOU WIN");
-              $("#row2").css("opacity", "0.2");
-              $("#row3").css("opacity", "0.2");
+              $("#alert").text("You have Defeated All Opponents");
+              $(".computer-div").css("opacity", "0.5");
+              $(".computer-div").children().css("color", "#555");
+              $(".computer-div").children().css("border-color", "#555");
+              $(".computer-div").children("h6").html("DEFEATED").css("color", "#AE3232");
               $(".button").css("opacity", "0.2");
+              $("#vs").text("YOU WIN");
             } else {
                 player.health = Math.round(player.health - opponent.counter);
                 opponent.health = Math.round(opponent.health - player.power);
                 player.power = player.power * 1.1;
-                $("#alert").text("Your Power has Increased to " + Math.round(player.power) + " points");
+                $("#alert").text("Your Attack Power has Increased to " + Math.round(player.power) + " points");
                 if (player.health > 0) {
                   $(".player-div").children("h6").html("<i class = 'fa fa-heartbeat hp-icon' aria-hidden='true'></i>" + " " + player.health);
                 } else {
-                    $(".player-div").children("h6").html("<i class = 'fa fa-heartbeat hp-icon' aria-hidden='true'></i>" +  " DANGER ZONE").css("color", "#AE3232");
+                    $(".player-div").children("h6").html("<i class = 'fa fa-heartbeat hp-icon' aria-hidden='true'></i>" +  " CRITICAL CONDITION").css("color", "#AE3232");
                   }
                 if (opponent.health > 0) {
                   $(".computer-div").children("h6").html("<i class = 'fa fa-heartbeat hp-icon' aria-hidden='true'></i>" + " " + opponent.health);
                 } else {
-                    $(".computer-div").children("h6").html("<i class = 'fa fa-heartbeat hp-icon' aria-hidden='true'></i>" + " DANGER ZONE").css("color", "#AE3232");
+                    $(".computer-div").children("h6").html("<i class = 'fa fa-heartbeat hp-icon' aria-hidden='true'></i>" + " CRITICAL CONDITION").css("color", "#AE3232");
                   }
               }
     }
