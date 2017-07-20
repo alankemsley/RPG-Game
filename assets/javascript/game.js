@@ -10,13 +10,13 @@ $(document).ready(function(){
       name: "JYN",
       health: 100,
       power: 5,
-      counter: 30
+      counter: 20
     },
     {
       name: "CASSIAN",
       health: 110,
       power: 4,
-      counter: 20
+      counter: 15
     },
     {
       name: "K2",
@@ -28,19 +28,19 @@ $(document).ready(function(){
       name: "CHIRRUT",
       health: 90,
       power: 7,
-      counter: 30
+      counter: 35
     },
     {
       name: "BAZE",
       health: 120,
       power: 6,
-      counter: 35
+      counter: 30
     },
     {
       name: "BODHI",
       health: 80,
       power: 2,
-      counter: 15
+      counter: 5
     }
   ];
 
